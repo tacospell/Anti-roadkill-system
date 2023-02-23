@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>348</width>
+    <width>287</width>
     <height>300</height>
    </rect>
   </property>
@@ -16,14 +16,30 @@
   <widget class="QPushButton" name="webcam">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>120</y>
+     <x>90</x>
+     <y>100</y>
      <width>89</width>
      <height>25</height>
     </rect>
    </property>
    <property name="text">
     <string>WEBCAM</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="yolo">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>130</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::PreventContextMenu</enum>
+   </property>
+   <property name="text">
+    <string>YOLO</string>
    </property>
   </widget>
  </widget>

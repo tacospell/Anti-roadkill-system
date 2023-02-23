@@ -13,10 +13,14 @@ class Dialog(QDialog):
 		
 	def setting(self):
 		self.webcam.clicked.connect(self.webcam0)
+		self.yolo.clicked.connect(self.yolo0)
 	
 	def webcam0(self):
 		os.system("python3 webcam.py")
-
+		
+	def yolo0(self):
+		os.system("python3 yolo.py")
+		
 app = QApplication(sys.argv)
 ex = Dialog()
 ex.show()
