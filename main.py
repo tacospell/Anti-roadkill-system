@@ -16,13 +16,13 @@ ap.add_argument("-t", "--threshold", type=float, default=0.3, help="threshold")
  
 args = vars(ap.parse_args())
  
-labelsPath = "YOLO-Object-Detection-master\yolo-coco\coco.names"
+labelsPath = "yolo-coco/coco.names"
 LABELS = open(labelsPath).read().strip().split("\n")
  
 COLORS = np.random.randint(0, 255, size=(len(LABELS), 3), dtype="uint8")
  
-weightsPath = "YOLO-Object-Detection-master\yolo-coco\yolov3.weights"
-configPath = "YOLO-Object-Detection-master\yolo-coco\yolov3.cfg"
+weightsPath = "yolo-coco/yolov3.weights"
+configPath = "yolo-coco/yolov3.cfg"
 
 
 print("starting...")
@@ -84,6 +84,9 @@ while True:
                 boxes.append([x, y, int(width), int(height)])
                 confidences.append(float(confidence))
                 classIDs.append(classID)
+                
+                animals = ['person', 'cat', 'dog']
+                if LABELS[classID] in animals: print(LABELS[classID],"Threat detected, please stop the Vehicle.")
    
     idxs = cv2.dnn.NMSBoxes(boxes, confidences, args["confidence"], args["threshold"])
    
