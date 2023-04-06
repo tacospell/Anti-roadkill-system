@@ -16,13 +16,13 @@ ap.add_argument("-t", "--threshold", type=float, default=0.3, help="threshold")
  
 args = vars(ap.parse_args())
  
-labelsPath = "yolo-coco/coco.names"
+labelsPath = "Anti-roadkill-system\yolo-coco\coco.names"
 LABELS = open(labelsPath).read().strip().split("\n")
  
 COLORS = np.random.randint(0, 255, size=(len(LABELS), 3), dtype="uint8")
  
-weightsPath = "yolo-coco/yolov3.weights"
-configPath = "yolo-coco/yolov3.cfg"
+weightsPath = "Anti-roadkill-system\yolo-coco\yolov3.weights"
+configPath = "Anti-roadkill-system\yolo-coco\yolov3.cfg"
 
 
 print("starting...")
